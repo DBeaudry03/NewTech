@@ -32,4 +32,5 @@ sudo apt autoremove -y
 sudo cp /etc/mysql/mariadb.conf.d/50-server.cnf ~/50-server.cnf.bak
 sudo sed -i '/^\s*bind-address\s*=/ s/127\.0\.0\.1/0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf
 
-
+sudo systemctl stop mysql
+sudo systemctl start mysql
