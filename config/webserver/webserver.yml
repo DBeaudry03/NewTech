@@ -1,5 +1,5 @@
 --- 
-- name: Install WebServer with PHP and MariaDB
+- name: Install WebServer with PHP and PostgreSQL
   hosts: 
     - 192.168.33.10
   become: yes
@@ -8,11 +8,6 @@
     - name: Install Apache2
       apt:
         name: apache2
-        state: present
-
-    - name: Inastall MariaDB Client
-      apt:
-        name: mariadb-client
         state: present
 
     - name: Install PHP 8.2
@@ -24,3 +19,9 @@
         - php8.2-cli
         - php8.2-mysql
         - php8.2-common
+
+    - name: Install PostgreSQL Client
+      apt:
+        name: postgresql-client
+        state: present
+
